@@ -1,5 +1,7 @@
+/* TODO: Get rid of white HTML gap at bottom of mobile view. See https://stackoverflow.com/questions/34188161/remove-white-space-below-footer */
+
 @charset "utf-8";
-/* CSS Document */
+/* CSS document */
 
 body,
 td,
@@ -10,29 +12,41 @@ p {
   color: #333;
   line-height: 1.5;
 }
+
 body {
-  background-color: #fdfdfd;
+  /* Displayed at bottom on mobile */
+  background-color: #db2626;
+  /* Removes border that appears around sides of screen */
   margin: 0;
-  position: relative;
+  /* padding: 0; */
+  /* TODO: Does this do anything */
+  /* position: relative; */
 }
+
 ul,
 li {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10pt;
   color: #333;
 }
+
 a {
   color: orange;
   text-decoration: none;
 }
+
 a:hover,
 a:focus {
-  color: #3397db;
+  color: #288dd1;
   text-decoration: none;
 }
+
+/* TODO: Find out what this applies to */
 a img {
-  border: none 0px #fff;
+  /* Shorthand for border-width, border-style, border-color */
+  border: 0 none #fff;
 }
+
 h1,
 h2,
 h3,
@@ -42,34 +56,26 @@ h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px;
 }
-article,
-aside,
-canvas,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
 
+/* Applies to restaurant hours table, and causes table to render more quickly. Whereas in the default table-layout property value of auto, in which column width is set by widest unbreakable content in cells (content dictating layout), with property value of fixed table and column widths are determined by width of table or col or by width of first row of cells. Column widths are split equally if widths not present in first row  */
 table {
   table-layout: fixed;
 }
 
 #maincontent {
   background-color: #f3f3f3;
-  min-height: 100%;
+  /* TODO: Does this do anything */
+  /* min-height: 100%; */
+  /* Needed to remove whitespace of body that appears below footer on mobile */
+  height: 100vh;
 }
+
 #main-restaurant {
   background-color: #f3f3f3;
   display: flex;
   flex-direction: column;
 }
+
 #footer {
   background-color: #444;
   color: #dedede;
@@ -79,23 +85,33 @@ table {
   text-align: center;
   text-transform: uppercase;
 }
+
 /* ====================== Navigation ====================== */
+
 nav {
   width: 100%;
   height: 80px;
   background-color: #252831;
+  /* With display-flex instead of default display block, magin: auto applied to centers  */
   display: flex;
 }
+
 nav h1 {
+  /*  With display-flex instead of default display: block applied to nav, magin: auto applied to h1 descendant of nav causes h1 to be centered */
   margin: auto;
 }
+
+/* Affects title at top of page */
 nav h1 a {
   color: #fff;
   font-size: 14pt;
   font-weight: 200;
+  /* Space between each letter. Adds space after last letter (but not before first) which makes it not look centered. Fix: adding a margin-left equal to the letter spacing */
   letter-spacing: 10px;
+  margin-left: 10px;
   text-transform: uppercase;
 }
+
 #breadcrumb {
   padding: 10px 40px 16px;
   list-style: none;
@@ -109,31 +125,35 @@ nav h1 a {
   display: inline;
 }
 
-/* Add a slash symbol (/) before/behind each list item */
+/* Add slash symbol (/) before/behind each list item */
 #breadcrumb li + li:before {
   padding: 8px;
   color: black;
   content: '/\00a0';
 }
 
-/* Add a color to all links inside the list */
+/* Add color to all links inside list */
 #breadcrumb li a {
   color: #252831;
   text-decoration: none;
 }
 
-/* Add a color on mouse-over */
+/* Add color on mouseover */
 #breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
 }
+
 /* ====================== Map ====================== */
+
 #map {
   height: 400px;
   max-width: 100%;
   background-color: #ccc;
 }
-/* ====================== Restaurant Filtering ====================== */
+
+/* ====================== Restaurant filtering ====================== */
+
 .filter-options {
   max-width: 100%;
   height: 50px;
@@ -142,6 +162,7 @@ nav h1 a {
   justify-content: center;
   align-items: center;
 }
+
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
@@ -154,7 +175,8 @@ nav h1 a {
   max-width: 160px;
 }
 
-/* ====================== Restaurant Listing ====================== */
+/* ====================== Restaurant listing ====================== */
+
 #restaurants-list {
   background-color: #f3f3f3;
   list-style: outside none none;
@@ -176,6 +198,7 @@ nav h1 a {
   text-align: left;
   max-width: 270px;
 }
+
 #restaurants-list .restaurant-img {
   background-color: #ccc;
   display: block;
@@ -184,6 +207,7 @@ nav h1 a {
   min-height: 248px;
   min-width: 100%;
 }
+
 #restaurants-list li h1 {
   color: #bd5900;
   font-family: Arial, sans-serif;
@@ -194,10 +218,12 @@ nav h1 a {
   margin: 20px 0 10px;
   text-transform: uppercase;
 }
+
 #restaurants-list p {
   margin: 0;
   font-size: 11pt;
 }
+
 #restaurants-list li a {
   background-color: #252831;
   border-bottom: 3px solid #eee;
@@ -211,22 +237,26 @@ nav h1 a {
   text-transform: uppercase;
 }
 
-/* ====================== Restaurant Details ====================== */
+/* ====================== Restaurant details ====================== */
+
 .inside header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
 }
+
 .inside #map-container {
   width: 100%;
   margin-top: 130px;
 }
+
 .inside #footer {
   bottom: 0;
   position: absolute;
   width: 95%;
 }
+
 #restaurant-name {
   color: #bd5900;
   font-family: Arial, sans-serif;
@@ -237,13 +267,16 @@ nav h1 a {
   text-transform: uppercase;
   line-height: 1.1;
 }
+
 #restaurant-img {
   width: 50%;
 }
+
 #restaurant-address {
   font-size: 12pt;
   margin: 10px 0px;
 }
+
 #restaurant-cuisine {
   background-color: #333;
   color: #ddd;
@@ -256,6 +289,7 @@ nav h1 a {
   text-transform: uppercase;
   width: 50%;
 }
+
 #restaurant-container,
 #reviews-container,
 .reviews-form {
@@ -266,9 +300,11 @@ nav h1 a {
   flex-direction: column;
   align-items: center;
 }
+
 #reviews-container {
   padding: 30px 40px 80px;
 }
+
 #reviews-container h2 {
   color: #252831;
   font-size: 24pt;
@@ -276,6 +312,7 @@ nav h1 a {
   letter-spacing: -1px;
   padding-bottom: 1pt;
 }
+
 #reviews-list {
   padding: 0;
   display: flex;
@@ -283,6 +320,7 @@ nav h1 a {
   align-items: center;
   max-width: 100%;
 }
+
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
@@ -291,6 +329,7 @@ nav h1 a {
   padding: 35px;
   width: 90%;
 }
+
 #reviews-list li p {
   margin: 0 0 10px;
   word-wrap: break-word;
@@ -302,6 +341,7 @@ nav h1 a {
   overflow: hidden;
   padding: 20px;
 }
+
 #restaurant-hours td {
   color: #666;
 }
@@ -309,13 +349,14 @@ nav h1 a {
 .restaurant-icon {
   display: flex;
 }
+
 .restaurant-fav-icon {
   width: 50px;
   height: 50px;
   margin-top: 10px;
 }
 
-/* Review Form */
+/* Review form */
 .form__heading {
   color: #252831;
   font-size: 24pt;
@@ -350,30 +391,31 @@ nav h1 a {
 }
 
 .leaflet-container a {
-    color: #252831 !important;
+  color: #252831 !important;
 }
 
-/* ====================== Media Queries ====================== */
+/* ====================== Media queries ====================== */
 
-/* Small devices (portrait tablets and medium phones, 640px and up) */
-@media only screen and (min-width: 640px) {
+/* Small devices (portrait tablets, medium phones) */
+@media screen and (min-width: 640px) {
   #restaurants-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Medium devices (landscape tablets and large phones, 960px and up) */
-@media only screen and (min-width: 960px) {
+/* Medium devices (landscape tablets and large phones) */
+@media screen and (min-width: 960px) {
   #restaurants-list {
     grid-template-columns: repeat(3, 1fr);
   }
+
   #reviews-list li {
     max-width: 70%;
   }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+/* Extra large devices (large laptops and desktops) */
+@media screen and (min-width: 1200px) {
   #restaurants-list {
     grid-template-columns: repeat(4, 1fr);
   }
