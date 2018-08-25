@@ -1,7 +1,4 @@
-/* TODO: Get rid of white HTML gap at bottom of mobile view. See https://stackoverflow.com/questions/34188161/remove-white-space-below-footer */
-
-@charset "utf-8";
-/* CSS document */
+@charset "utf-8"; /* TODO: Why is this needed? */
 
 body,
 td,
@@ -18,9 +15,6 @@ body {
   background-color: #db2626;
   /* Removes border that appears around sides of screen */
   margin: 0;
-  /* padding: 0; */
-  /* TODO: Does this do anything */
-  /* position: relative; */
 }
 
 ul,
@@ -64,10 +58,6 @@ table {
 
 #maincontent {
   background-color: #f3f3f3;
-  /* TODO: Does this do anything */
-  /* min-height: 100%; */
-  /* Needed to remove whitespace of body that appears below footer on mobile */
-  height: 100vh;
 }
 
 #main-restaurant {
@@ -125,14 +115,15 @@ nav h1 a {
   display: inline;
 }
 
-/* Add slash symbol (/) before/behind each list item */
+/* Adds slash symbol before/behind each list item */
 #breadcrumb li + li:before {
   padding: 8px;
   color: black;
+  /* Hexadecimal code for nonbreaking space */
   content: '/\00a0';
 }
 
-/* Add color to all links inside list */
+/* Adds color to all links inside list */
 #breadcrumb li a {
   color: #252831;
   text-decoration: none;
@@ -239,6 +230,8 @@ nav h1 a {
 
 /* ====================== Restaurant details ====================== */
 
+/* 'inside' is the class name given to the body tag in restaurant.html. Note footer not styled differently so to avoid duplication styling from #footer ruleset employed for restaurant details page */
+
 .inside header {
   position: fixed;
   top: 0;
@@ -249,12 +242,6 @@ nav h1 a {
 .inside #map-container {
   width: 100%;
   margin-top: 130px;
-}
-
-.inside #footer {
-  bottom: 0;
-  position: absolute;
-  width: 95%;
 }
 
 #restaurant-name {
