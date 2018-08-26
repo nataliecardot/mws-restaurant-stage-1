@@ -150,6 +150,8 @@ createRestaurantHTML = restaurant => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  // Makes restaurant list details buttons tabbed third, after filter options dropdowns (instead of map markers)
+  more.tabIndex = '3';
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 

@@ -1,5 +1,3 @@
-@charset "utf-8"; /* TODO: Why is this needed? */
-
 body,
 td,
 th,
@@ -334,40 +332,6 @@ nav h1 a {
   width: 50px;
   height: 50px;
   margin-top: 10px;
-}
-
-/* Review form */
-.form__heading {
-  color: #252831;
-  font-size: 24pt;
-  font-weight: 300;
-  padding-top: 1rem;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form > input,
-.form > textarea {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 0.4rem;
-}
-
-.form__restaurant-id {
-  display: none;
-}
-
-.form__submit {
-  background-color: transparent;
-  color: #252831;
-  border: 1px solid #252831;
-  border-radius: 0.4rem;
-  padding: 1rem;
-  letter-spacing: 0.5rem;
-  text-indent: 0.5em;
 }
 
 .leaflet-container a {
