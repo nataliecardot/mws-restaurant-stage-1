@@ -175,7 +175,7 @@ nav h1 a {
   display: grid;
   grid-gap: 20px;
   /* grid-template-columns: repeat(1, 1fr); */
-  /* justify-items is used to justify the grid items along the row axis. When entire grid is smaller than the space for the grid container, use justify-content to justify the grid along the row axis */
+  /* This only takes effect at the smallest (max-width: 767) breakpoint because it centers within a grid cell. There are an odd number of items within the ul, and this does not center the two in the last row when there is more than one column. This cannot be accomplished with CSS Grid. See first answer in https://stackoverflow.com/questions/50234112/aligning-grid-items-across-the-entire-row-column-like-flex-items-can */
   justify-items: center;
 }
 
@@ -379,10 +379,11 @@ nav h1 a {
 
 /* ====================== Media queries ====================== */
 
-/* TODO: At 800px, li should be wider (there is a gap on the sides of uls). For #restaurants-list li there is max-width: 270px set in main CSS; could be cause */
+/* Breakpoints correspond to those used in the Bootstrap grid system. Note: min and max are inclusive */
 
-/* Extra small devices */
-@media screen and (max-width: 640px) {
+/* Phones/extra small screens */
+@media screen and (max-width: 767px) {
+
   #restaurants-list li {
     /* For #restaurants-list li there is max-width: 270px set in main CSS; this replacement declaration makes it wider, occuping 90% of the screen width */
     max-width: 90%;
@@ -398,10 +399,11 @@ nav h1 a {
     width: 80%;
   }
 }
-/* Small devices (portrait tablets, medium phones) */
-@media screen and (max-width: 960px) {
+
+/* Tablets/small screens */
+@media screen and (min-width: 768px) {
   #restaurants-list {
-    /* Splits grid into two equally spaced columns. Note: A grid track is the space between any two lines on the grid. fr is a length unit used to create flexible grid tracks and represents a fraction of the available space in the container. This is the same effect as grid-template-columns: 1fr 1 fr
+    /* Splits grid into two equally spaced columns. Note: A grid track is the space between any two lines on the grid. The flex unit fr is a length unit used to create flexible grid tracks and represents a fraction of the available space in the container. This is the same effect as grid-template-columns: 1fr 1 fr
     See https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Track_listings_with_repeat()_notation */
     grid-template-columns: repeat(2, 1fr);
   }
@@ -422,8 +424,8 @@ nav h1 a {
   }
 }
 
-/* Medium devices (landscape tablets and large phones) */
-@media screen and (max-width: 1199px) {
+/* Small laptops/medium screens */
+@media screen and (min-width: 992px) {
   #restaurants-list {
     /* Splits grid into three equally spaced columns. Three columns of restaurant info cards actually don't appear until width is 974px (not sure why) */
     grid-template-columns: repeat(3, 1fr);
@@ -440,7 +442,7 @@ nav h1 a {
   }
 }
 
-/* Extra large devices (large laptops and desktops) */
+/* Larger laptops, desktops/large screens */
 @media screen and (min-width: 1200px) {
   #restaurants-list {
     /* Splits grid into three equally spaced columns. Four columns of restaurant info cards actually don't appear until width is 1216px (not sure why) */
