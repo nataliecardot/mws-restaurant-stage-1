@@ -175,7 +175,7 @@ nav h1 a {
   display: grid;
   grid-gap: 20px;
   /* grid-template-columns: repeat(1, 1fr); */
-  /* This only takes effect at the smallest (max-width: 767) breakpoint because it centers within a grid cell. There are an odd number of items within the ul, and this does not center the two in the last row when there is more than one column. This cannot be accomplished with CSS Grid. See first answer in https://stackoverflow.com/questions/50234112/aligning-grid-items-across-the-entire-row-column-like-flex-items-can */
+  /* This only takes effect at the smallest (max-width: 767) breakpoint because it centers within a grid cell. There are an odd number of items within the ul, and this does not center the two in the last row when there is more than one column. This cannot be accomplished with CSS Grid due to impenetrable column lines/tracks (whereas with Flexbox, an item can be moved around along a row/column without issue) */
   justify-items: center;
 }
 
