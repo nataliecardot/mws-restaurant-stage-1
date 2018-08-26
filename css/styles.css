@@ -11,8 +11,6 @@ p {
 }
 
 body {
-  /* Displayed at bottom on mobile */
-  background-color: #db2626;
   /* Removes border that appears around sides of screen */
   margin: 0;
 }
@@ -176,6 +174,7 @@ nav h1 a {
   padding: 30px 15px 30px;
   display: grid;
   grid-gap: 20px;
+  /* grid-template-columns: repeat(1, 1fr); */
   /* justify-items is used to justify the grid items along the row axis. When entire grid is smaller than the space for the grid container, use justify-content to justify the grid along the row axis */
   justify-items: center;
 }
@@ -380,27 +379,71 @@ nav h1 a {
 
 /* ====================== Media queries ====================== */
 
+/* TODO: At 800px, li should be wider (there is a gap on the sides of uls). For #restaurants-list li there is max-width: 270px set in main CSS; could be cause */
+
+/* Extra small devices */
+@media screen and (max-width: 640px) {
+  #restaurants-list li {
+    /* For #restaurants-list li there is max-width: 270px set in main CSS; this replacement declaration makes it wider, occuping 90% of the screen width */
+    max-width: 90%;
+  }
+
+  /* Image on restaurant details page. Width set to 50% in main CSS */
+  #restaurant-img {
+    width: 80%;
+  }
+
+  /* Cuisine type label directly below restaurant image. Set to 50% in main CSS */
+  #restaurant-cuisine {
+    width: 80%;
+  }
+}
 /* Small devices (portrait tablets, medium phones) */
-@media screen and (min-width: 640px) {
+@media screen and (max-width: 960px) {
   #restaurants-list {
+    /* Splits grid into two equally spaced columns. Note: A grid track is the space between any two lines on the grid. fr is a length unit used to create flexible grid tracks and represents a fraction of the available space in the container. This is the same effect as grid-template-columns: 1fr 1 fr
+    See https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Track_listings_with_repeat()_notation */
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  #restaurants-list li {
+    /* For #restaurants-list li there is max-width: 270px set in main CSS; this undoes that, allowing li to occupy more space */
+    max-width: none;
+  }
+
+  /* Image on restaurant details page. Width set to 50% in main CSS */
+  #restaurant-img {
+    width: 70%;
+  }
+
+  /* Cuisine type label directly below restaurant image. Set to 50% in main CSS */
+  #restaurant-cuisine {
+    width: 70%;
   }
 }
 
 /* Medium devices (landscape tablets and large phones) */
-@media screen and (min-width: 960px) {
+@media screen and (max-width: 1199px) {
   #restaurants-list {
+    /* Splits grid into three equally spaced columns. Three columns of restaurant info cards actually don't appear until width is 974px (not sure why) */
     grid-template-columns: repeat(3, 1fr);
   }
 
-  #reviews-list li {
-    max-width: 70%;
+  /* Image on restaurant details page. Width set to 50% in main CSS */
+  #restaurant-img {
+    width: 60%;
+  }
+
+  /* Cuisine type label directly below restaurant image. Set to 50% in main CSS */
+  #restaurant-cuisine {
+    width: 60%;
   }
 }
 
 /* Extra large devices (large laptops and desktops) */
 @media screen and (min-width: 1200px) {
   #restaurants-list {
+    /* Splits grid into three equally spaced columns. Four columns of restaurant info cards actually don't appear until width is 1216px (not sure why) */
     grid-template-columns: repeat(4, 1fr);
   }
 }
