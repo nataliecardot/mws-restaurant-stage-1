@@ -80,12 +80,11 @@ nav {
   width: 100%;
   height: 80px;
   background-color: #252831;
-  /* With display-flex instead of default display block, magin: auto applied to centers  */
   display: flex;
 }
 
 nav h1 {
-  /*  With display-flex instead of default display: block applied to nav, magin: auto applied to h1 descendant of nav causes h1 to be centered */
+  /*  With display-flex instead of default display: block applied to nav, margin: auto applied to h1 descendant of nav causes h1 to be centered */
   margin: auto;
 }
 
@@ -144,12 +143,10 @@ nav h1 a {
 /* ====================== Restaurant filtering ====================== */
 
 .filter-options {
-  max-width: 100%;
-  height: 50px;
-  background-color: #3397db;
+  background-color: #3469cc;
   display: flex;
+  /* Centers along primary axis (horizontal in this case since display: flex sets the flex direction to row by default) */
   justify-content: center;
-  align-items: center;
 }
 
 .filter-options select {
@@ -374,7 +371,7 @@ nav h1 a {
 }
 
 .leaflet-container a {
-  color: #252831 !important;
+  color: #252831;
 }
 
 /* ====================== Media queries ====================== */
@@ -383,6 +380,11 @@ nav h1 a {
 
 /* Phones/extra small screens */
 @media screen and (max-width: 767px) {
+
+  nav h1 a {
+    /* Makes 1pt smaller */
+    font-size: 13pt;
+  }
 
   #restaurants-list li {
     /* For #restaurants-list li there is max-width: 270px set in main CSS; this replacement declaration makes it wider, occuping 90% of the screen width */
