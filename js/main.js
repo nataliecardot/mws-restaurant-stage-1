@@ -1,9 +1,8 @@
-let restaurants,
-  neighborhoods,
-  cuisines
-var newMap
-var markers = []
-
+let restaurants;
+let neighborhoods;
+let cuisines;
+var newMap;
+var markers = [];
 
 // Fetch neighborhoods and cuisines as soon as the page is loaded
 document.addEventListener('DOMContentLoaded', event => {
@@ -35,9 +34,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   });
 }
 
-/**
- * Fetch all cuisines and set their HTML.
- */
+// Fetch all cuisines and set their HTML
 fetchCuisines = () => {
   DBHelper.fetchCuisines((error, cuisines) => {
     if (error) { // Got an error!
@@ -130,10 +127,12 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 // Create restaurant HTML
 createRestaurantHTML = restaurant => {
   const li = document.createElement('li');
+  let altInfo = restaurant.name + ' restaurant, located in' + restaurant.neighborhood;
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = altInfo;
   li.append(image);
 
   const name = document.createElement('h1');
