@@ -224,15 +224,9 @@ nav h1 a {
 /* 'inside' is class name given to the body tag in restaurant.html. Note footer not styled differently so to avoid duplication styling from #footer ruleset employed for restaurant details page */
 
 .inside header {
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-}
-
-.inside #map-container {
-  width: 100%;
-  margin-top: 130px;
 }
 
 #restaurant-name {
