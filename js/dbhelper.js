@@ -2,6 +2,7 @@
 class DBHelper {
 
   // Database URL. Change this to restaurants.json file location on your server.
+  // Note: Static methods are used to implement functions that belong to the class, but not to any particular object of it. They are not assigned to a class's (function's) prototype. Rather than being called on instances of the class, they are called on the class itself
   static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
     return `http://localhost:${port}/data/restaurants.json`;
@@ -69,9 +70,7 @@ class DBHelper {
     });
   }
 
-  /**
-   * Fetch restaurants by a cuisine and a neighborhood with proper error handling.
-   */
+  // Fetch restaurants by a cuisine and a neighborhood with proper error handling
   static fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, callback) {
     // Fetch all restaurants
     DBHelper.fetchRestaurants((error, restaurants) => {
