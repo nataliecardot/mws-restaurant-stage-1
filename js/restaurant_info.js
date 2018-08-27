@@ -136,6 +136,8 @@ createReviewHTML = review => {
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
   li.appendChild(comments);
+  // Setting tabindex ARIA attribute to 0 allows elements besides links and form elements to receive keyboard focus
+  li.setAttribute('tabindex', '0');
 
   return li;
 }

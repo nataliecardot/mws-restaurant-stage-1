@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', event => {
 });
 
 // Fetch all neighborhoods and set their HTML
+// Note: Declaring a function variable withouta variable declaration keyword means the variable is declared globally (on the window object)
 fetchNeighborhoods = () => {
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
     if (error) { // Got an error
@@ -148,10 +149,11 @@ createRestaurantHTML = restaurant => {
   li.append(address);
 
   const more = document.createElement('a');
-  more.innerHTML = 'View Details';
+  more.innerHTML = 'View details';
   // Makes restaurant list details buttons tabbed third, after filter options dropdowns (instead of map markers)
   more.tabIndex = '3';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.setAttribute('aria-label', `View details Of ${restaurant.name}`)
   li.append(more)
 
   return li;
