@@ -18,3 +18,7 @@ Using starter code for a restaurant reviews webpage, I fulfilled a few requireme
 * Python 2: `python -m SimpleHTTPServer 8000`
 * Python 3: `python3 -m http.server 8000`. Leave the terminal open.
 4. Visit the site in your browser at http://localhost:8000
+
+## Dependencies
+
+This project uses [Leaflet](https://leafletjs.com/), a JavaScript library for embedding maps, and [Mapbox](https://www.mapbox.com/), an open-source mapping platform that is free to use.
