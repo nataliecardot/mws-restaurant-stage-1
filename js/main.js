@@ -1,3 +1,13 @@
+if ('serviceWorker' in navigator) {
+  // then() method returns a Promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise
+  navigator.serviceWorker.register('../sw.js').then(registration => {
+    console.log('Registration successful; the scope is: ' registration.scope);
+  // catch() method returns a Promise and deals with rejected cases only. It's equivalent to then(undefined, func), but used in its place for readability
+  }).catch(err => {
+    console.log('Service worker registration failed; error: ', err);
+  });
+}
+
 let restaurants;
 let neighborhoods;
 let cuisines;
@@ -150,8 +160,9 @@ createRestaurantHTML = restaurant => {
   more.innerHTML = 'View details';
   // Makes restaurant list details buttons tabbed third, after filter options dropdowns (instead of map markers)
   more.tabIndex = '3';
+  more.setAttribute('aria-label', `View details of ${restaurant.name}`)
+  more.setAttribute('role', 'button');
   more.href = DBHelper.urlForRestaurant(restaurant);
-  more.setAttribute('aria-label', `View details Of ${restaurant.name}`)
   li.append(more)
 
   return li;
