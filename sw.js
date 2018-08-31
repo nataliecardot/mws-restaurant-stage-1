@@ -1,7 +1,8 @@
-// Service worker script. Using to cache resources on service worker install
+// Service worker script (service worker is registered in js/main.js). Using to cache resources on service worker install. Service worker intercepts network requests. This script mainly listens for events
 
 // Not placing this file in js folder because for security reasons, a service worker can only control the pages that are in its same directory or its subdirectories (must cache assets outside of js folder)
 
+// TODO: Check this is right
 const cacheName = 'restaurant-cache';
 
 const cacheAssets = [
