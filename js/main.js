@@ -174,10 +174,10 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 // Checks if browser supports service workers (as of 8/18 all versions of IE and Opera Mini [Android version of Opera] do not). Navigator.serviceWorker is read-only property that returns ServiceWorkerContainer object for associated document, which provides access to registration, removal, upgrade, and communication with service worker
 if ('serviceWorker' in navigator) {
   // Registers service worker script. Returns a promise
-  // then() method returns a Promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise
+  // then() method returns a promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise
   navigator.serviceWorker.register('../sw.js').then(() => {
     console.log('Registration successful');
-  // catch() method returns a Promise and deals with rejected cases only. It's equivalent to then(undefined, func), but used in its place for readability
+  // catch() method returns a promise and deals with rejected cases only. It's equivalent to then(undefined, func), but used in its place for readability
   }).catch(err => {
     console.log(`Service worker registration failed; error: {$err}`);
   });
