@@ -3,12 +3,9 @@ if ('serviceWorker' in navigator) {
   // Registers service worker script. Returns a promise
   // then() method returns a promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise
   navigator.serviceWorker.register('../sw.js')
-  .then(() => {
-    console.log('Registration successful!');
+  .then((reg) => console.log('Registration successful'))
   // catch() method returns a promise and deals with rejected cases only. It's equivalent to then(undefined, func), but used in its place for readability
-  }).catch(err => {
-    console.log('Registration failed with ' + err);
-  });
+  .catch(err => console.log(`Registration failed with ${err}`));
 }
 
 let restaurants;

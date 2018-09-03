@@ -37,8 +37,8 @@ self.addEventListener('install', e => {
       // cache.addAll() will reject if any resources fail to cache, preventing service worker from installing (in other words it's atomic). Also addAll() uses fetch; requests transmitted via browser cache
       return cache.addAll(cacheAssets);
     }).catch(err => {
-      console.log('Install failed due to ' + err);
-    });
+      console.log(`Install failed due to ${err}`);
+    }) // No semicolon allowed here!
   );
 });
 
@@ -50,6 +50,6 @@ self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then(response => {
       return response || fetch(e.request);
-    });
+    }) // No semicolon allowed here!
   );
 });
