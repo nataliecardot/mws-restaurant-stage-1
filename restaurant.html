@@ -11,7 +11,7 @@
   <!-- Main CSS file -->
   <link rel="stylesheet" href="css/styles.css" type="text/css">
   <!-- Leaflet JS is open-source library for interactive maps. Basis for MapBox JS -->
-  <!-- Integrity attribute instructs browser to check whether file source has been manipulated and if so, to not load code. crossorigin attribute is required, and empty string is a valid keyword, which maps to the anonymous state. For details see https://html.spec.whatwg.org/#cors-settings-attributes -->
+  <!-- Integrity attribute instructs browser to check whether file source has been manipulated and if so, to not load code. crossorigin attribute, required when using integrity, lets you configure CORS requests for the element's fetched data. Empty string is treated as anonymous keyword; cross-origin request will be performed, but no credentials will be provided. See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes#Attributes -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="">
   <title>Restaurant Details</title>
@@ -53,8 +53,6 @@
     Copyright (c) 2018 <a href="/"><strong>Restaurant Reviews</strong></a> All rights reserved.
   </footer>
 
-  <!-- Leaflet JS is open-source library for interactive maps. Basis for MapBox JS -->
-  <!-- Integrity attribute instructs browser to check whether file source has been manipulated and if so, to not load code. crossorigin attribute is required, and empty string is a valid keyword, which maps to the anonymous state. For details see https://html.spec.whatwg.org/#cors-settings-attributes -->
   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
   <script src="js/dbhelper.js"></script>
