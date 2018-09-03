@@ -393,7 +393,7 @@ nav h1 a {
   }
 }
 
-/* Larger laptops, desktops/large screens */
+/* Regular and large laptops, desktops/large screens */
 @media screen and (min-width: 1200px) {
   #restaurants-list {
     /* Splits grid into three equally spaced columns. Four columns of restaurant info cards actually don't appear until width is 1216px (not sure why) */
