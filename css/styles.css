@@ -330,7 +330,7 @@ nav h1 a {
 
 /* Breakpoints correspond to those used in the Bootstrap grid system. Note: min and max are inclusive */
 
-/* Phones/extra small screens */
+/* Mobile phones/extra small screens */
 @media screen and (max-width: 767px) {
 
   nav h1 a {
