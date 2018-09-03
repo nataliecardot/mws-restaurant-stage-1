@@ -47,19 +47,13 @@ h6 {
   margin: 0 0 20px;
 }
 
-/* Applies to restaurant hours table, and causes table to render more quickly. Whereas in the default table-layout property value of auto, in which column width is set by widest unbreakable content in cells (content dictating layout), with property value of fixed table and column widths are determined by width of table or col or by width of first row of cells. Column widths are split equally if widths not present in first row  */
+/* Applies to restaurant hours table, and causes table to render more quickly. Whereas in the default table-layout property value of auto, in which column width is set by widest unbreakable content in cells (content dictating layout), with property value of fixed table and column widths are determined by width of table or col or by width of first row of cells. Column widths are split equally if widths not present in first row */
 table {
   table-layout: fixed;
 }
 
 #maincontent {
   background-color: #f3f3f3;
-}
-
-#main-restaurant {
-  background-color: #f3f3f3;
-  display: flex;
-  flex-direction: column;
 }
 
 #footer {
@@ -89,7 +83,7 @@ nav h1 {
 /* Affects title at top of page */
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
+  font-size: 15pt;
   font-weight: 200;
   /* Space between each letter. Adds space after last letter (but not before first) which makes it not look centered. Fix: adding a margin-left equal to the letter spacing */
   letter-spacing: 10px;
@@ -141,7 +135,7 @@ nav h1 a {
 /* ====================== Restaurant filtering ====================== */
 
 .filter-options {
-  background-color: #3469cc;
+  background-color: #3367d6;
   display: flex;
   /* Centers along primary axis (horizontal in this case since display: flex sets the flex direction to row by default) */
   justify-content: center;
@@ -188,10 +182,12 @@ nav h1 a {
   max-width: 100%;
 }
 
-#restaurants-list li h1 {
-  color: #bd5900;
+/* Heading set in main.js, line 147 */
+#restaurants-list li h2 {
+  /* Matches color used on for restaraunt name and reviews section header on restaurant details page */
+  color: #c7650d;
   font-family: Arial, sans-serif;
-  font-size: 14pt;
+  font-size: 13pt;
   font-weight: 200;
   letter-spacing: 0;
   line-height: 1.3;
@@ -221,17 +217,15 @@ nav h1 a {
 
 /* ====================== Restaurant details ====================== */
 
-/* 'inside' is class name given to the body tag in restaurant.html. Note footer not styled differently so to avoid duplication styling from #footer ruleset employed for restaurant details page */
-
+/* Affects h2 restaurant name on restaurant info page, created in restaurant.html */
 #restaurant-name {
-  color: #bd5900;
-  font-family: Arial, sans-serif;
-  font-size: 20pt;
-  font-weight: 200;
-  letter-spacing: 0;
-  margin: 15px 0 30px;
+  color: #c7650d;
+  font-size: 19pt;
+  /* 400 is default */
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  margin: 15px 0 35px;
   text-transform: uppercase;
-  line-height: 1.1;
 }
 
 #restaurant-img {
@@ -271,12 +265,15 @@ nav h1 a {
   padding: 30px 40px 80px;
 }
 
-#reviews-container h2 {
-  color: #252831;
-  font-size: 24pt;
+/* Reviews section header created on line 104 of restaurant_info.js. Keep as h3 for proper semantics (h3 must follow h2, which is already being used for restaurant title) */
+#reviews-container h3 {
+  color: #c7650d;
+  font-size: 19pt;
+  /* 400 is default */
   font-weight: 300;
-  letter-spacing: -1px;
-  padding-bottom: 1pt;
+  letter-spacing: 1.5px;
+  margin: 15px 0 25px;
+  text-transform: uppercase;
 }
 
 #reviews-list {
