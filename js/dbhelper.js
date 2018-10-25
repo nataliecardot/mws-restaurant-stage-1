@@ -5,7 +5,8 @@ class DBHelper {
   // Note: Static methods are used to implement functions that belong to the class, but not to any particular object of it. They are not assigned to a class's (function's) prototype. Rather than being called on instances of the class, they are called on the class itself
   static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
-    return `http://localhost:${port}/data/restaurants.json`;
+    //  Changed to this URL from http://localhost:${port}/data/restaurants.json in order to deploy with gh-pages
+    return './data/restaurants.json';
   }
 
   // Fetch all restaurants
