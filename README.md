@@ -1,7 +1,5 @@
 # Restaurant Reviews App
 
-## Project Overview
-
 I completed this project as part of Udacity's Front-End Web Developer Nanodegree program.
 
 Using starter code for a restaurant reviews webpage, I fulfilled a few requirements, including:
@@ -11,7 +9,7 @@ Using starter code for a restaurant reviews webpage, I fulfilled a few requireme
 
 ## How to Run
 
-View it live [here](https://nataliecardot.com/mws-restaurant-stage-1/)
+**View it live [here](https://nataliecardot.com/restaurant-reviews/)**
 
 **View locally:**
 
