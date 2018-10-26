@@ -69,7 +69,8 @@ nav {
 }
 
 nav h1 {
-  text-align: center;
+  /*  With display-flex instead of default display: block applied to nav, margin: auto applied to h1 descendant of nav causes h1 to be centered */
+  margin: auto;
 }
 
 /* Affects title at top of page */
@@ -81,6 +82,7 @@ nav h1 a {
   letter-spacing: 10px;
   margin-left: 10px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 #breadcrumb {
@@ -217,7 +219,7 @@ nav h1 a {
   /* 400 is default */
   font-weight: 300;
   letter-spacing: 1.5px;
-  margin: 15px 0 35px;
+  margin-top: 0;
   text-transform: uppercase;
   text-align: center;
 }
@@ -228,6 +230,7 @@ nav h1 a {
 
 #restaurant-address {
   font-size: 12pt;
+  color: #7c7b7b;
   margin: 10px 0px;
 }
 
@@ -271,12 +274,13 @@ nav h1 a {
   flex-direction: column;
   align-items: center;
   max-width: 100%;
+  margin-bottom: 0;
 }
 
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   overflow: hidden;
   padding: 35px;
   width: 80%;
@@ -323,7 +327,10 @@ nav h1 a {
 
 /* Mobile phones/extra small screens */
 @media screen and (max-width: 767px) {
-
+  nav h1 {
+    text-align: center;
+  }
+  
   nav h1 a {
     /* Makes 1pt smaller */
     font-size: 13pt;
