@@ -130,7 +130,7 @@ nav h1 a {
 /* ====================== Restaurant filtering ====================== */
 
 .filter-options {
-  background-color: #3367d6;
+  background-color: #1862c6;
   display: flex;
   /* Centers along primary axis (horizontal in this case since display: flex sets the flex direction to row by default) */
   justify-content: center;
@@ -218,8 +218,8 @@ nav h1 a {
   font-size: 19pt;
   /* 400 is default */
   font-weight: 300;
+  margin-top: 1px;
   letter-spacing: 1.5px;
-  margin-top: 0;
   text-transform: uppercase;
   text-align: center;
 }
@@ -230,7 +230,7 @@ nav h1 a {
 
 #restaurant-address {
   font-size: 12pt;
-  color: #7c7b7b;
+  color: #666;
   margin: 10px 0px;
 }
 
@@ -265,6 +265,7 @@ nav h1 a {
   /* 400 is default */
   font-weight: 300;
   letter-spacing: 1.5px;
+  margin: 7px 0 7px 0;
   text-transform: uppercase;
 }
 
@@ -330,7 +331,7 @@ nav h1 a {
   nav h1 {
     text-align: center;
   }
-  
+
   nav h1 a {
     /* Makes 1pt smaller */
     font-size: 13pt;
@@ -399,5 +400,9 @@ nav h1 a {
   #restaurants-list {
     /* Splits grid into three equally spaced columns. Four columns of restaurant info cards actually don't appear until width is 1216px (not sure why) */
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  #reviews-list li {
+    width: 60%;
   }
 }
