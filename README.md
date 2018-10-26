@@ -1,6 +1,4 @@
-## Restaurant Reviews App
-
----
+# Restaurant Reviews App
 
 ## Project Overview
 
