@@ -12,7 +12,7 @@ Using starter code for a restaurant reviews webpage, I fulfilled a few requireme
 
 ## How to Run
 
-##### View it live [here](https://nataliecardot.com/mws-restaurant-stage-1/)
+View it live [here](https://nataliecardot.com/mws-restaurant-stage-1/)
 
 **View locally:**
 
