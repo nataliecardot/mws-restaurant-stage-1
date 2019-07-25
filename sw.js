@@ -3,7 +3,7 @@
 // Not placing this file in js folder because for security reasons, a service worker can only control the pages that are in its same directory or its subdirectories (must cache assets outside of js folder)
 
 // Must work with service worker to pick up changes to CSS, etc., by changing service worker so browser treats updated service worker as new version, which gets its own install event in which it fetches assets (including updated ones) and places them in a new cache, which isn't automatic (have to change name of cache). Create new cache as not to disrupt one already being used by old service worker and pages it controls. Delete old cache once old service worker is released
-const staticCacheName = 'restaurant-reviews-app-cache-v1'
+const staticCacheName = 'restaurant-reviews-app-cache-v1';
 
 const cacheAssets = [
   '/',
